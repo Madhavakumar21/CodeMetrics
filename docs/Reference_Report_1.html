@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Code Metrics Report</title>
+
+        <style>
+            h1 {
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                text-align: center;
+                color: blue;
+            }
+            h4 {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                color: red;
+            }
+            h6 {
+                font-style: italic;
+                color: red;
+            }
+            table {
+                border: 2px solid black;
+                border-collapse: collapse;
+            }
+            td, th {
+                border: 2px solid black;
+                padding: 3px;
+                font-family: Arial, Helvetica, sans-serif;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .SubHeading > td {
+                border: 0px solid black;
+                background-color: rgb(216, 175, 255);
+            }
+            th {
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 20px;
+                background-color: blueviolet;
+                /*color: rgb(230, 230, 230);*/
+                color: wheat;
+                padding-left: 100px;
+                padding-right: 100px;
+            }
+            .Consolidated th {
+                background-color: orange;
+                color: white;
+                padding-left: 75px;
+                padding-right: 75px;
+            }
+            .Consolidated td {
+                background-color: rgb(255, 201, 100);
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <!-- NOTE: This is an auto-generated file -->
+
+        <h1>CODE METRICS REPORT</h1>
+        <br>
+
+        <table class = "Consolidated">
+            <thead>
+                <tr>
+                    <th>Type of File</th>
+                    <th>Number of Files</th>
+                    <th>Number of Lines</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>py Files</td>
+                    <td>2</td>
+                    <td>358</td>
+                </tr>
+                <tr>
+                    <td>c Files</td>
+                    <td>1</td>
+                    <td>2403</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br><br>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>Number of Lines</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class = "SubHeading">
+                    <td>py Files</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>src/module1/file1.py</td>
+                    <td>250</td>
+                </tr>
+                <tr>
+                    <td>src/module1/file2.py</td>
+                    <td>108</td>
+                </tr>
+                <tr class = "SubHeading">
+                    <td>c Files</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>src/module2/file3.c</td>
+                    <td>2403</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </body>
+
+</html>
