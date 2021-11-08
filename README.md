@@ -2,6 +2,8 @@
 
 This repo contains simple implementation of code metrics collection software. This software is easy to use with minimal configuration options and generates the HTML report.
 
+#### :information_source: NOTE: If you don't have the executable for this application or you have modified the program, build the *exe* by the following steps.
+
 ## Build Dependencies
 
 1. #### pyinstaller
