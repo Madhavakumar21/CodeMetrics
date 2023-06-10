@@ -11,7 +11,7 @@ FILES ANALYSER
 
 
 import os
-
+import io      # NOTE: New Bug-Fix on 10th June 2023
 
 
 def get_file_list(Dir, SkipDir_disabled, dir_filt):
@@ -73,6 +73,8 @@ def fetch_metrics(path, filters, skip_Dirs_disabled = True, dirFilt = ""):
     print("\n\n\n")
 
     '''
+    
+    path = path.replace("/", "\\") # NOTE: New Bug-Fix on 10th June 2023
 
     dirFilt_temp = dirFilt.split(",")
     dir_filters = []
@@ -109,7 +111,8 @@ def fetch_metrics(path, filters, skip_Dirs_disabled = True, dirFilt = ""):
         result[ext] = {}
         for file_name in file_lst:
             if file_name.endswith(ext):
-                with open(file_name, 'r', encoding = 'utf-8') as f_handle:
+                #with open(file_name, 'r', encoding = 'utf-8') as f_handle:
+                with io.open(file_name, 'r', encoding = 'latin-1') as f_handle:    # NOTE: New Bug-Fix on 10th June 2023
                     n_lines = len(f_handle.readlines())
                     result[ext]["." + file_name[len(path):]] = n_lines
 
