@@ -10,6 +10,7 @@ CODE METRICS
 """
 
 
+#from PyQt5 import sip
 #import ...
 from app_gui import *
 

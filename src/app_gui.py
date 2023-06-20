@@ -11,19 +11,27 @@ APP GUI
 
 from PyQt5 import QtCore, QtWidgets, uic
 import sys
+import os
 
+from Window import *
 from files_analyser import *
 import report_generator
 
-class Ui_Window(QtWidgets.QWidget):
-    def __init__(self):
-        super().__init__()
 
-        uic.loadUi("Window.ui", self)
+#class AppGui(QtWidgets.QWidget):
+class AppGui(QtWidgets.QWidget, Ui_Window):
+    def __init__(self):
+        QtWidgets.QWidget.__init__(self)
+        self.setupUi(self)
+        #super().__init__()
+
+        #uic.loadUi("Window.ui", self)
 
         title = "Code Metrics" + " V" + VERSION
         #_translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(QtCore.QCoreApplication.translate("Window", title))
+        #self.setWindowIcon(QtGui.QIcon('app_icon.ico'))
+
         self.browse_btn.clicked.connect(self.browse)
         self.skipDir_checkBox.toggled.connect(self.skipDir_toggled)
         self.skipDir_disabled = True
@@ -85,10 +93,20 @@ if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
     QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
 # Constants
-VERSION = "3.4.2"
+VERSION = "4.0.0"
 
 app = QtWidgets.QApplication(sys.argv)
-ui = Ui_Window()
+ui = AppGui()
+
+base_dir = os.path.dirname(__file__)
+app.setWindowIcon(QtGui.QIcon(os.path.join(base_dir, 'app_icon.ico')))
+
+try:
+    from ctypes import windll  # Only exists on Windows.
+    app_id = 'Madhavakumar.CodeMetrics.4.00'
+    windll.shell32.SetCurrentProcessExplicitAppUserModelID(app_id)
+except ImportError:
+    pass
 
 
 if __name__ == "__main__":
